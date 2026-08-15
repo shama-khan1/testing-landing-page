@@ -1,184 +1,284 @@
-.counter {
-  font-size: 16px;
-  padding: 5px 10px;
-  border-radius: 5px;
-  color: var(--accent);
-  background: var(--accent-bg);
-  border: 2px solid transparent;
-  transition: border-color 0.3s;
-  margin-bottom: 24px;
-
-  &:hover {
-    border-color: var(--accent-border);
-  }
-  &:focus-visible {
-    outline: 2px solid var(--accent);
-    outline-offset: 2px;
-  }
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
+
+body {
+  font-family: Arial, sans-serif;
+  background: #f7f7ff;
+  color: #111827;
+}
+
+
+/* ================= NAVBAR ================= */
+
+.navbar {
+  width: 100%;
+  min-height: 76px;
+
+  background: #061126;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 0 5%;
+}
+
+
+/* Logo */
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  color: white;
+  font-size: 28px;
+  font-weight: 600;
+}
+
+.logo-icon {
+  font-size: 32px;
+}
+
+
+/* Navigation */
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 45px;
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+
+  font-size: 20px;
+  font-weight: 600;
+
+  padding: 25px 0;
+
+  transition: 0.3s;
+}
+
+.nav-links a:hover {
+  color: #8b5cf6;
+}
+
+.nav-links .active {
+  color: #8b5cf6;
+
+  border-bottom: 4px solid #8b5cf6;
+}
+
+
+/* ================= HERO ================= */
 
 .hero {
-  position: relative;
+  text-align: center;
 
-  .base,
-  .framework,
-  .vite {
-    inset-inline: 0;
-    margin: 0 auto;
-  }
-
-  .base {
-    width: 170px;
-    position: relative;
-    z-index: 0;
-  }
-
-  .framework,
-  .vite {
-    position: absolute;
-  }
-
-  .framework {
-    z-index: 1;
-    top: 34px;
-    height: 28px;
-    transform: perspective(2000px) rotateZ(300deg) rotateX(44deg) rotateY(39deg)
-      scale(1.4);
-  }
-
-  .vite {
-    z-index: 0;
-    top: 107px;
-    height: 26px;
-    width: auto;
-    transform: perspective(2000px) rotateZ(300deg) rotateX(40deg) rotateY(39deg)
-      scale(0.8);
-  }
+  padding: 45px 20px 60px;
 }
 
-#center {
+.hero h1 {
+  font-size: 60px;
+  font-weight: 700;
+
+  background: linear-gradient(
+    90deg,
+    #6d28d9,
+    #111827
+  );
+   
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+
+/* Small line under heading */
+
+.hero-line {
   display: flex;
-  flex-direction: column;
-  gap: 25px;
-  place-content: center;
-  place-items: center;
-  flex-grow: 1;
+  align-items: center;
+  justify-content: center;
 
-  @media (max-width: 1024px) {
-    padding: 32px 20px 24px;
-    gap: 18px;
-  }
-}
-
-#next-steps {
-  display: flex;
-  border-top: 1px solid var(--border);
-  text-align: left;
-
-  & > div {
-    flex: 1 1 0;
-    padding: 32px;
-    @media (max-width: 1024px) {
-      padding: 24px 20px;
-    }
-  }
-
-  .icon {
-    margin-bottom: 16px;
-    width: 22px;
-    height: 22px;
-  }
-
-  @media (max-width: 1024px) {
-    flex-direction: column;
-    text-align: center;
-  }
-}
-
-#docs {
-  border-right: 1px solid var(--border);
-
-  @media (max-width: 1024px) {
-    border-right: none;
-    border-bottom: 1px solid var(--border);
-  }
-}
-
-#next-steps ul {
-  list-style: none;
-  padding: 0;
-  display: flex;
   gap: 8px;
-  margin: 32px 0 0;
+
+  margin: 15px 0 20px;
+}
+
+.hero-line span:first-child {
+  width: 52px;
+  height: 5px;
+
+  background: #8b5cf6;
+
+  border-radius: 10px;
+}
+
+.hero-line span:last-child {
+  width: 8px;
+  height: 8px;
+
+  background: #8b5cf6;
+
+  border-radius: 50%;
+}
+
+
+.hero p {
+  font-size: 20px;
+  color: #5b6475;
+
+  line-height: 1.6;
+}
+
+
+/* ================= FOOTER ================= */
+
+.footer {
+  width: 90%;
+  margin: 0 auto 20px;
+
+  background: #f0efff;
+
+  border-radius: 18px;
+
+  text-align: center;
+
+  padding: 20px;
+}
+
+
+.footer-icon {
+  font-size: 32px;
+  margin-bottom: 8px;
+}
+
+
+.footer h3 {
+  font-size: 20px;
+  margin-bottom: 8px;
+}
+
+
+.footer p {
+  color: #5b6475;
+  font-size: 16px;
+
+  margin-bottom: 20px;
+}
+
+
+.copyright {
+  color: #555;
+  font-size: 16px;
+}
+
+/* Mobile Responsive CSS */
+
+@media (max-width: 768px) {
+
+  /* NAVBAR */
+
+  .navbar {
+    flex-direction: column;
+
+    padding: 18px 20px;
+
+    gap: 15px;
+  }
 
   .logo {
-    height: 18px;
+    font-size: 24px;
   }
 
-  a {
-    color: var(--text-h);
-    font-size: 16px;
-    border-radius: 6px;
-    background: var(--social-bg);
-    display: flex;
-    padding: 6px 12px;
-    align-items: center;
-    gap: 8px;
-    text-decoration: none;
-    transition: box-shadow 0.3s;
+  .nav-links {
+    width: 100%;
 
-    &:hover {
-      box-shadow: var(--shadow);
-    }
-    .button-icon {
-      height: 18px;
-      width: 18px;
-    }
-  }
-
-  @media (max-width: 1024px) {
-    margin-top: 20px;
-    flex-wrap: wrap;
     justify-content: center;
 
-    li {
-      flex: 1 1 calc(50% - 8px);
-    }
+    gap: 20px;
 
-    a {
-      width: 100%;
-      justify-content: center;
-      box-sizing: border-box;
-    }
+    flex-wrap: wrap;
   }
+
+  .nav-links a {
+    font-size: 15px;
+
+    padding: 8px 0;
+  }
+
+
+  /* HERO */
+
+  .hero {
+    padding: 35px 15px 45px;
+  }
+
+  .hero h1 {
+    font-size: 42px;
+  }
+
+  .hero p {
+    font-size: 16px;
+  }
+
+
+  /* FOOTER */
+
+  .footer {
+    width: 94%;
+
+    padding: 20px 15px;
+  }
+
+  .footer p {
+    font-size: 14px;
+
+    line-height: 1.5;
+  }
+
 }
 
-#spacer {
-  height: 88px;
-  border-top: 1px solid var(--border);
-  @media (max-width: 1024px) {
-    height: 48px;
-  }
-}
+/* Very Small Mobile Screen */
 
-.ticks {
-  position: relative;
-  width: 100%;
+@media (max-width: 480px) {
 
-  &::before,
-  &::after {
-    content: '';
-    position: absolute;
-    top: -4.5px;
-    border: 5px solid transparent;
+  .navbar {
+    padding: 15px;
   }
 
-  &::before {
-    left: 0;
-    border-left-color: var(--border);
+  .logo {
+    font-size: 22px;
   }
-  &::after {
-    right: 0;
-    border-right-color: var(--border);
+
+  .logo-icon {
+    font-size: 26px;
   }
+
+  .nav-links {
+    gap: 14px;
+  }
+
+  .nav-links a {
+    font-size: 14px;
+  }
+
+  .hero h1 {
+    font-size: 36px;
+  }
+
+  .hero p {
+    font-size: 15px;
+  }
+
+  .footer {
+    margin-bottom: 10px;
+  }
+
 }
